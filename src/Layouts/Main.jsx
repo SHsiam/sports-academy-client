@@ -5,7 +5,7 @@ import Footer from "../Pages/Share/Footer/Footer";
 
 const Main = () => {
     return (
-        <div>
+        <div >
             <NavMenu></NavMenu>
             <Outlet></Outlet>
             <Footer></Footer>
