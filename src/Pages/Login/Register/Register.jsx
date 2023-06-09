@@ -2,13 +2,20 @@ import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useForm } from "react-hook-form";
 import login from '../../../assets/login.jpg'
+import { useState } from "react";
 
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const[passwordError,setPasswordError]=useState();
 
     const onSubmit = data => {
         console.log(data);
+        const password=data.password;
+        const confirmPassword=data.confirmPassword;
+        if(password !==confirmPassword){
+            setPasswordError('Password is not matching');
+        }
     }
 
     return (
@@ -59,7 +66,9 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type="password"  {...register("confirmPassword", { required: true })} placeholder="Confirm Password" className="input input-bordered" />
+                                <input type="password"  {...register("confirmPassword", {
+                                    required: true,
+                                })} placeholder="Confirm Password" className="input input-bordered" />
                                 {errors.confirmPassword && <span className="text-red-600">Confirm Password is required</span>}
                             </div>
                             <div className="form-control mt-6">
@@ -69,9 +78,13 @@ const Register = () => {
                         <p className="font-bold mx-4"><small>Already have an account? <Link className='text-sky-600' to="/login">Login</Link></small></p>
                         <SocialLogin></SocialLogin>
                     </div>
+                   
                 </div>
+              
             </div>
+            <p>{passwordError}</p>
         </div>
+        
     );
 };
 
