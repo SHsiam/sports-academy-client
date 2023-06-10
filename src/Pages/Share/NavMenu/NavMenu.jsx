@@ -18,7 +18,7 @@ const NavMenu = () => {
          <Link to='/instructors'>Instructors</Link>
          
         </li>
-        <li ><Link to='/classes'>Classes</Link></li>
+        <li ><Link to='/class'>Classes</Link></li>
         <li ><Link to='/dashboard'>Dashboard</Link></li>
         
     </>
