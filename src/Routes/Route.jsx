@@ -7,6 +7,10 @@ import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
 import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
+import Dashboard from "../Layouts/Dashboard";
+import MyCart from "../Pages/Dashboard/MyCart/MyCart";
+
+
 
   export const router = createBrowserRouter([
     {
@@ -34,5 +38,15 @@ import Classes from "../Pages/Classes/Classes";
             element:<Register></Register>
         }
       ]
-    }
-])
+    },
+   {
+    path:'dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:'mycart',
+        element:<MyCart></MyCart>
+      }
+    ]
+   }
+]);
