@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import logo from '../../../../public/logo.png'
 import { AuthContext } from "../../../providers/AuthProvider";
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaCartPlus } from 'react-icons/fa';
 import { useContext } from "react";
+import useClass from "../../../hooks/useClass";
 
 const NavMenu = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const [classed]=useClass();
   const handleLogOut = () => {
     logOut()
         .then(() => { })
@@ -23,9 +24,9 @@ const NavMenu = () => {
         <li ><Link to='/dashboard'>Dashboard</Link></li>
         <li>
             <Link to="/">
-                <button className="btn gap-2">
-                    <FaShoppingCart></FaShoppingCart>
-                    <div className="badge badge-secondary">+</div>
+                <button className="btn">
+                    <FaCartPlus  className='text-sky-600'></FaCartPlus >
+                    <div className="badge badge-secondary">+{classed?.length || 0}</div>
                 </button>
             </Link>
         </li>

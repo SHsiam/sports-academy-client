@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import useClass from "../../hooks/useClass";
 
 
 const ClassesCard = ({ classed }) => {
@@ -10,12 +11,13 @@ const ClassesCard = ({ classed }) => {
     const {user} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const [, refetch] = useClass();
 
     const handleAddToCart = classed => {
         console.log(classed);
         if(user && user.email){
             const classItem = {itemId: _id, name, image, price, email: user.email}
-            fetch('http://localhost:5000/class', {
+            fetch('http://localhost:5000/items', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -25,6 +27,7 @@ const ClassesCard = ({ classed }) => {
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
+                    refetch();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
