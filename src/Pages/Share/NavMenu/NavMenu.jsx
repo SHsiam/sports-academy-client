@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from '../../../../public/logo.png'
 import { AuthContext } from "../../../providers/AuthProvider";
+import { FaShoppingCart } from 'react-icons/fa';
 import { useContext } from "react";
 
 const NavMenu = () => {
@@ -20,6 +21,14 @@ const NavMenu = () => {
         </li>
         <li ><Link to='/class'>Classes</Link></li>
         <li ><Link to='/dashboard'>Dashboard</Link></li>
+        <li>
+            <Link to="/">
+                <button className="btn gap-2">
+                    <FaShoppingCart></FaShoppingCart>
+                    <div className="badge badge-secondary">+</div>
+                </button>
+            </Link>
+        </li>
         
     </>
     return (
