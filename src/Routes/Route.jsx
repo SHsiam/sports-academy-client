@@ -10,6 +10,7 @@ import Classes from "../Pages/Classes/Classes";
 import Dashboard from "../Layouts/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import Alluser from "../Pages/Dashboard/Alluser/Alluser";
 
 
 
@@ -51,6 +52,10 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
       {
         path:'payment',
         element:<Payment></Payment>
+      },
+      {
+        path:'allusers',
+        element:<Alluser></Alluser>
       }
     ]
    }
