@@ -1,4 +1,4 @@
-import { FaBook, FaCartPlus, FaHome,  FaUsers,  FaUtensils,  FaWallet } from "react-icons/fa";
+import { FaAddressCard, FaBook, FaCartPlus, FaHome,  FaUsers, FaWallet } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useClass from "../hooks/useClass";
@@ -24,16 +24,14 @@ const Dashboard = () => {
                  {
                           isAdmin ? <>
                               <li><NavLink to="/dashboard/manageclass"><FaBook></FaBook> Manage Classes</NavLink></li>
-                              <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
+                              <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> Manage Users</NavLink></li>
                               
                           </> : 
                           isInstructor ?
                           <>
-                          <li><NavLink to="/dashboard/addclass"><FaHome></FaHome> Admin Home</NavLink></li>
-                          <li><NavLink to="/dashboard/addItems"> <FaUtensils></FaUtensils> Add Items</NavLink></li>
-                          <li><NavLink to="/dashboard/manageclass"><FaWallet></FaWallet> Manage Classes</NavLink></li>
-                          <li><NavLink to="/dashboard/history"><FaBook></FaBook> Manage Bookings</NavLink></li>
-                          <li><NavLink to="/dashboard/addclass"> Add Class</NavLink></li>
+                         
+                          <li><NavLink to="/dashboard/myclasses"><FaWallet></FaWallet> My Classes</NavLink></li>
+                          <li><NavLink to="/dashboard/addclass"> <FaAddressCard></FaAddressCard>Add Class</NavLink></li>
                           
                       </>
                           :<>

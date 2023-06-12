@@ -13,6 +13,8 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import Alluser from "../Pages/Dashboard/Alluser/Alluser";
 import PrivateRoute from "./PrivateRoute";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 
 
 
@@ -55,6 +57,7 @@ import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
         path:'payment',
         element:<Payment></Payment>
       },
+      //admin
       {
         path:'allusers',
         element:<Alluser></Alluser>
@@ -62,6 +65,15 @@ import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
       {
         path:'manageclass',
         element:<ManageClasses></ManageClasses>
+      },
+      //instructor
+      {
+        path:'addclass',
+        element:<AddClass></AddClass>
+      },
+      {
+        path:'myclasses',
+        element:<MyClasses></MyClasses>
       }
     ]
    }
