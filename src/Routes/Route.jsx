@@ -9,6 +9,7 @@ import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
 import Dashboard from "../Layouts/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 
@@ -46,6 +47,10 @@ import MyCart from "../Pages/Dashboard/MyCart/MyCart";
       {
         path:'mycart',
         element:<MyCart></MyCart>
+      },
+      {
+        path:'payment',
+        element:<Payment></Payment>
       }
     ]
    }

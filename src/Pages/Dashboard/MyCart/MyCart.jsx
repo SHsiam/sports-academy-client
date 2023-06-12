@@ -38,11 +38,11 @@ const MyCart = () => {
         })
     }
     return (
-        <div className="w-full">
+        <div className="w-full h-full">
             <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
                 <h3 className="text-3xl text-sky-600">Total Items: {items.length}</h3>
                 <h3 className="text-3xl text-sky-600">Total Price: ${total}</h3>
-                <Link >
+                <Link to='/dashboard/payment' >
                     <button className="btn text-white bg-sky-600">PAYMENT</button>
                 </Link>
             </div>
@@ -50,7 +50,7 @@ const MyCart = () => {
                 <table className="table w-full">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Serial</th>
                             <th>Class</th>
                             <th>Class Name</th>
                             <th>Price</th>
@@ -68,7 +68,7 @@ const MyCart = () => {
                                 <td>
                                     <div className="avatar">
                                         <div className="mask mask-squircle w-12 h-12">
-                                            <img src={item.image} alt="Avatar Tailwind CSS Component" />
+                                            <img src={item.image} alt="Avatar" />
                                         </div>
                                     </div>
                                 </td>
