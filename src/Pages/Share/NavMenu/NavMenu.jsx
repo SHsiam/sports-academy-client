@@ -4,11 +4,10 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { FaCartPlus } from 'react-icons/fa';
 import { useContext } from "react";
 import useClass from "../../../hooks/useClass";
-import useAdmin from "../../../hooks/useAdmin";
+
 
 const NavMenu = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [isAdmin] = useAdmin();
   const [items]=useClass();
   const handleLogOut = () => {
     logOut()
@@ -24,10 +23,6 @@ const NavMenu = () => {
         </li>
         <li ><Link to='/class'>Classes</Link></li>
         <li ><Link to='dashboard'>Dashboard</Link></li>
-        {
-            isAdmin ? <li><Link to="/dashboard/adminhome">Dashboard</Link></li> : 
-            <li><Link to="/dashboard/userhome">Dashboard</Link></li>
-        }
         <li>
             <Link to="dashboard/mycart">
                 <button className="btn">

@@ -59,12 +59,11 @@ const Alluser = () => {
              
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Serial</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Admin</th>
                         <th>Instructor</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

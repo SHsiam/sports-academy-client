@@ -11,6 +11,8 @@ import Dashboard from "../Layouts/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import Alluser from "../Pages/Dashboard/Alluser/Alluser";
+import PrivateRoute from "./PrivateRoute";
+import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 
 
 
@@ -43,7 +45,7 @@ import Alluser from "../Pages/Dashboard/Alluser/Alluser";
     },
    {
     path:'dashboard',
-    element:<Dashboard></Dashboard>,
+    element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children:[
       {
         path:'mycart',
@@ -56,6 +58,10 @@ import Alluser from "../Pages/Dashboard/Alluser/Alluser";
       {
         path:'allusers',
         element:<Alluser></Alluser>
+      },
+      {
+        path:'manageclass',
+        element:<ManageClasses></ManageClasses>
       }
     ]
    }
