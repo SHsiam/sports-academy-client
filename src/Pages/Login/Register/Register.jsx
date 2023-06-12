@@ -1,11 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useForm } from "react-hook-form";
-import login from '../../../assets/login.jpg'
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
+
 
 
 const Register = () => {
@@ -32,7 +33,7 @@ const Register = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email, image: data.photoURL }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://sports-academy-server-theta.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -63,13 +64,12 @@ const Register = () => {
 
     return (
         <div>
+               <Helmet>
+                <title>Sports Academy | Register</title>
+            </Helmet>
             <div className="hero min-h-screen bg-sky-50">
                 <div className="hero-content flex-col md:flex-row-reverse">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-3xl font-bold my-2">Sign up now!</h1>
-                        <img className="w-1/2 rounded-2xl" src={login} alt="" />
-                    </div>
-                    <div className="card md:w-1/2 max-w-sm shadow-2xl bg-sky-200">
+                    <div className="card">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">

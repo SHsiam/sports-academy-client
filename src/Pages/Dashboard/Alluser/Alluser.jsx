@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { FaBookOpen, FaUserShield } from "react-icons/fa";
+import { Slide } from "react-awesome-reveal";
 
 
 const Alluser = () => {
@@ -12,7 +13,7 @@ const Alluser = () => {
     })
 
     const handleMakeAdmin = user =>{
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://sports-academy-server-theta.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -32,7 +33,7 @@ const Alluser = () => {
     }
 
     const handleMakeInstructor = user =>{
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://sports-academy-server-theta.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -52,6 +53,7 @@ const Alluser = () => {
     }
 
     return (
+        <Slide>
         <div className="w-full">
         <h3 className="text-3xl font-semibold my-4">Total Users: {users.length}</h3>
         <div className="overflow-x-auto">
@@ -87,6 +89,7 @@ const Alluser = () => {
             </table>
         </div>
     </div>
+    </Slide>
     );
 };
 

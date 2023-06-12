@@ -11,11 +11,13 @@ import Dashboard from "../Layouts/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import Alluser from "../Pages/Dashboard/Alluser/Alluser";
-import PrivateRoute from "./PrivateRoute";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
+import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -56,17 +58,21 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         element:<MyCart></MyCart>
       },
       {
+        path:'history',
+        element:<PaymentHistory></PaymentHistory>
+      },
+      {
         path:'payment',
         element:<Payment></Payment>
       },
       //admin
       {
         path:'allusers',
-        element:<Alluser></Alluser>
+        element:<AdminRoute><Alluser></Alluser></AdminRoute>
       },
       {
         path:'manageclass',
-        element:<ManageClasses></ManageClasses>
+        element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
       },
       //instructor
       {

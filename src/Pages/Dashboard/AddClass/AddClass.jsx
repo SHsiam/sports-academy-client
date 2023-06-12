@@ -1,3 +1,4 @@
+import { Slide } from "react-awesome-reveal";
 
 
 const AddClass = () => {
@@ -25,7 +26,7 @@ const AddClass = () => {
 
         console.log(addClass);
 
-        fetch('http://localhost:5000/class/', {
+        fetch('https://sports-academy-server-theta.vercel.app/class/', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'
@@ -41,6 +42,7 @@ const AddClass = () => {
         })
     }
     return (
+        <Slide>
         <div>
        
         <form onSubmit={handleAddClass} >
@@ -87,6 +89,7 @@ const AddClass = () => {
             </div>
         </form>
     </div>
+    </Slide>
     );
 };
 

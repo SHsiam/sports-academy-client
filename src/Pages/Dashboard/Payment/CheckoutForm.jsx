@@ -73,7 +73,7 @@ const CheckoutForm = ({items,price}) => {
             console.log(confirmError);
         }
 
-        console.log('payment intent', paymentIntent)
+        console.log(paymentIntent)
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
@@ -92,7 +92,7 @@ const CheckoutForm = ({items,price}) => {
                 .then(res => {
                     console.log(res.data);
                     if (res.data.result.insertedId) {
-                        // display confirm
+                        console.log(res.data.result.insertedId)
                     }
                 })
         }

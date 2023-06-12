@@ -6,6 +6,7 @@ import { useContext } from "react";
 import useClass from "../../../hooks/useClass";
 
 
+
 const NavMenu = () => {
   const { user, logOut } = useContext(AuthContext);
   const [items]=useClass();
@@ -22,9 +23,9 @@ const NavMenu = () => {
          
         </li>
         <li ><Link to='/class'>Classes</Link></li>
-        <li ><Link to='dashboard'>Dashboard</Link></li>
+        <li ><Link to='/dashboard'>Dashboard</Link></li>
         <li>
-            <Link to="dashboard/mycart">
+            <Link to="/dashboard/mycart">
                 <button className="btn">
                     <FaCartPlus  className='text-sky-600'></FaCartPlus >
                     <div className="badge badge-secondary">+{items?.length || 0}</div>

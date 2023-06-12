@@ -5,10 +5,12 @@ import banner3 from '../../../assets/banner/banner-3.jpg'
 import banner4 from '../../../assets/banner/banner-4.jpg'
 import banner5 from '../../../assets/banner/banner-5.jpg'
 import { Carousel } from "react-responsive-carousel";
+import { Bounce } from "react-awesome-reveal";
 
 const Slider = () => {
     return (
         <>
+        <Bounce>
              <Carousel >
                 <div>
                     <img src={banner1} />
@@ -34,6 +36,7 @@ const Slider = () => {
                     
                 </div>
             </Carousel>
+            </Bounce>
         </>
     );
 };

@@ -1,12 +1,15 @@
 import  { useState } from 'react';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import login from '../../../assets/login.jpg'
 import { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const LoginForm = () => {
+  <Helmet>
+  <title>Sports Academy | Login</title>
+</Helmet>
   const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -55,12 +58,8 @@ const LoginForm = () => {
 
   return (
     <div className="hero min-h-screen bg-sky-50">
-      <div className="hero-content flex-col md:flex-row-reverse">
-        <div className="text-center md:w-1/2 lg:text-left">
-          <h1 className="text-3xl font-bold my-2 text-center">Login now!</h1>
-          <img className="h-96 w-96 rounded-2xl" src={login} alt="" />
-        </div>
-        <div className="card md:w-1/2 max-w-sm shadow-2xl bg-sky-200">
+      <div className="hero-content ">
+        <div className="card ">
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">

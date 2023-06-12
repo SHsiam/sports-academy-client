@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import useClass from "../../../hooks/useClass";
+
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useClass from "../../../hooks/useClass";
+import { Slide } from "react-awesome-reveal";
 
 
 const MyCart = () => {
@@ -20,7 +22,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/items/${item._id}`, {
+                fetch(`https://sports-academy-server-theta.vercel.app/items/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -38,6 +40,7 @@ const MyCart = () => {
         })
     }
     return (
+        <Slide>
         <div className="w-full h-full">
             <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
                 <h3 className="text-3xl text-sky-600">Total Items: {items.length}</h3>
@@ -87,6 +90,7 @@ const MyCart = () => {
                 </table>
             </div>
         </div>
+        </Slide>
     );
 };
 

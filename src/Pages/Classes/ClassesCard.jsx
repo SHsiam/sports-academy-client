@@ -17,7 +17,7 @@ const ClassesCard = ({ classed }) => {
         console.log(classed);
         if(user && user.email){
             const classItem = {itemId: _id, name, image, price, email: user.email}
-            fetch('http://localhost:5000/items', {
+            fetch('https://sports-academy-server-theta.vercel.app/items', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

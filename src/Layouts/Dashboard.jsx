@@ -1,15 +1,18 @@
 import { FaAddressCard, FaBook, FaCartPlus, FaHome,  FaUsers, FaWallet } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import useInstructor from "../hooks/useInstructor";
 import useAdmin from "../hooks/useAdmin";
 import useClass from "../hooks/useClass";
-import useInstructor from "../hooks/useInstructor";
+import { Slide } from "react-awesome-reveal";
+
 
 
 const Dashboard = () => {
     const [items] = useClass();
     const [isAdmin] = useAdmin();
-    const [isInstructor] = useInstructor();
+  const [isInstructor]=useInstructor();
     return (
+        <Slide>
         <div className="drawer drawer-mobile lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
@@ -27,7 +30,7 @@ const Dashboard = () => {
                               <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> Manage Users</NavLink></li>
                               
                           </> : 
-                          isInstructor ?
+                         isInstructor ?
                           <>
                          
                           <li><NavLink to="/dashboard/myclasses"><FaWallet></FaWallet> My Classes</NavLink></li>
@@ -52,6 +55,7 @@ const Dashboard = () => {
   
         </div>
     </div>
+    </Slide>
     );
 };
 
