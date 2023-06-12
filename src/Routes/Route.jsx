@@ -15,6 +15,7 @@ import PrivateRoute from "./PrivateRoute";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -22,6 +23,7 @@ import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
